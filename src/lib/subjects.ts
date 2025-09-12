@@ -1,5 +1,13 @@
-export const courseSubjects: Record<string, any[]> = {
-  "Diploma-1": [
+// export const courseSubjects: Record<string, any[]> = {
+export interface Subject {
+  code: string;
+  name: string;
+  credits: number;
+  field: string;
+}
+
+export const courseSubjects: Record<string, Subject[]> = { 
+"Diploma-1": [
     { code: "CHMC111", name: "Spiritual Formation I", credits: 3, field: "SpiritualFormation_I_CHMC111" },
     { code: "GEST112", name: "English I", credits: 3, field: "English_I_GEST112" },
     { code: "BIOT113", name: "Old Testament Survey", credits: 3, field: "OldTestamentSurvey_BIOT113" },

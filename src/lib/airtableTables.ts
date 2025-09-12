@@ -45,14 +45,14 @@ export function normalizeCourseKey(course: string): string {
 }
 
 export const courseLabels: Record<string, string> = {
-  bth1: "BTH-1 1-Semester",
-  bth2: "BTH-2 3-Semester",
-  bth3: "BTH-3 5-Semester",
-  diploma1: "Diploma-1 1-Semester",
-  diploma2: "Diploma-2 3-Semester",
-  mdiv1: "MDIV-1 1-Semester",
-  mdiv2: "MDIV-2 3-Semester",
-  mdiv3: "MDIV-3 5-Semester",
-  mth2: "MTH-2 3-Semester",
-  mth3: "MTH-3 5-Semester",
+  bth1: "BTH-1 | 1-Semester",
+  bth2: "BTH-2 | 3-Semester",
+  bth3: "BTH-3 | 5-Semester",
+  diploma1: "Diploma-1 | 1-Semester",
+  diploma2: "Diploma-2 | 3-Semester",
+  mdiv1: "MDIV-1 | 1-Semester",
+  mdiv2: "MDIV-2 | 3-Semester",
+  mdiv3: "MDIV-3 | 5-Semester",
+  mth2: "MTH-2 | 3-Semester",
+  mth3: "MTH-3 | 5-Semester",
 };

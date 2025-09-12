@@ -3,13 +3,25 @@
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 
+interface Subject {
+  code: string;
+  name: string;
+  credits: number;
+  field: string;
+}
+
+interface Student {
+  OriginalName?: string;
+  [key: string]: string | number | undefined;
+}
+
 interface DownloadPDFButtonProps {
-  student: any;
-  subjects: any[];
+  student: Student;
+  subjects: Subject[];
   totalMarks: number;
   rollNo: string;
   course: string;
-    batch: string;
+  batch: string;
 }
 
 export default function DownloadPDFButton({
