@@ -1,4 +1,3 @@
-// export const courseSubjects: Record<string, any[]> = {
 export interface Subject {
   code: string;
   name: string;
