@@ -120,7 +120,7 @@ interface Subject {
 
 interface Student {
   OriginalName?: string;
-  Batch?: any;
+  Batch?: string | number; // ✅ no any
   [key: string]: string | number | undefined;
 }
 
@@ -161,7 +161,7 @@ export default function ResultClient({
           totalMarks={totalMarks}
           rollNo={rollNo}
           course={course}
-          batch={batch}
+          batch={batch ? String(batch) : ""}
         />
       </div>
 

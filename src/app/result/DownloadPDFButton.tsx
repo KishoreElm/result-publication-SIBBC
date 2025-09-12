@@ -1,5 +1,6 @@
 "use client";
 
+import { courseLabels } from "@/lib/airtableTables";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 
@@ -30,10 +31,10 @@ export default function DownloadPDFButton({
   totalMarks,
   rollNo,
   course,
-    batch,
+  batch,
 }: DownloadPDFButtonProps) {
   const handleDownload = () => {
-    const doc = new jsPDF({ unit: "mm", format: "a4" });
+    const doc = new jsPDF();
 
     // Add Logo (if hosted in /public/images)
     const imgUrl = "/images/SIBBC_Logo_New_40_yellow.png";
@@ -46,7 +47,11 @@ export default function DownloadPDFButton({
       50,
       40
     );
-    doc.text("An Accredited Member Of The Asia Theological Association", 55, 46);
+    doc.text(
+      "An Accredited Member Of The Asia Theological Association",
+      55,
+      46
+    );
 
     // Title
     doc.setFontSize(14);
@@ -56,7 +61,7 @@ export default function DownloadPDFButton({
     doc.setFontSize(12);
     doc.text(`Name: ${student?.OriginalName ?? "-"}`, 14, 70);
     doc.text(`Roll No: ${rollNo}`, 100, 70);
-    doc.text(`Course: ${course}`, 14, 78);
+    doc.text(`Course:  ${courseLabels[course]}`, 14, 78);
     doc.text(`Batch: ${batch}`, 100, 78);
 
     // Table
@@ -72,7 +77,9 @@ export default function DownloadPDFButton({
     });
 
     //  Footer (credits + marks)
-    const finalY = (doc as any).lastAutoTable?.finalY || 100;
+
+    const finalY = doc.lastAutoTable?.finalY ?? 100;
+
     doc.setFontSize(12);
     doc.text("No. of Credits Required: 19", 14, finalY + 10);
     doc.text(`Overall Marks: ${totalMarks}`, 150, finalY + 10);
@@ -87,7 +94,7 @@ export default function DownloadPDFButton({
         onClick={handleDownload}
         className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
       >
-    Download PDF
+        Download PDF
       </button>
     </div>
   );
