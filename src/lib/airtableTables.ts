@@ -11,11 +11,6 @@ export const airtableTables: Record<string, string> = {
   mth3: process.env.AIRTABLE_MTH3 || "",
 };
 
-// Normalize course into DB-friendly key (lowercase, no dashes/spaces)
-// export function normalizeCourseKey(course: string): string {
-//   return course.toLowerCase().replace(/[-\s]/g, ""); 
-//   // e.g. "BTH-1" → "bth1", "mdiv 2" → "mdiv2"
-// }
 
 export function normalizeCourseKey(course: string): string {
   switch (course.toLowerCase()) {
