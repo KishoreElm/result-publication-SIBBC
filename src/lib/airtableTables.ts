@@ -7,8 +7,8 @@ export const airtableTables: Record<string, string> = {
   mdiv1: process.env.AIRTABLE_MDIV1 || "",
   mdiv2: process.env.AIRTABLE_MDIV2 || "",
   mdiv3: process.env.AIRTABLE_MDIV3 || "",
+  mth1: process.env.AIRTABLE_MTH1 || "",
   mth2: process.env.AIRTABLE_MTH2 || "",
-  mth3: process.env.AIRTABLE_MTH3 || "",
 };
 
 
@@ -30,10 +30,10 @@ export function normalizeCourseKey(course: string): string {
       return "MDIV-2";
     case "mdiv3":
       return "MDIV-3";
+    case "mth1":
+      return "MTH-1";
     case "mth2":
       return "MTH-2";
-    case "mth3":
-      return "MTH-3";
     default:
       return course;
   }
@@ -48,6 +48,6 @@ export const courseLabels: Record<string, string> = {
   mdiv1: "MDIV-1 | 1-Semester",
   mdiv2: "MDIV-2 | 3-Semester",
   mdiv3: "MDIV-3 | 5-Semester",
+  mth1: "MTH-1 | 1-Semester",
   mth2: "MTH-2 | 3-Semester",
-  mth3: "MTH-3 | 5-Semester",
 };

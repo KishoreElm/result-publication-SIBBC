@@ -42,11 +42,7 @@ export default function ResultClient({
 
   return (
     <div className=" w-[1400px]  mx-auto bg-white  shadow-lg rounded-3xl ">
-     
-      <div
-        ref={printRef}
-        className="  p-6 printable flex flex-col"
-      >
+      <div ref={printRef} className="  p-6 printable flex flex-col">
         <div className="flex justify-end gap-4 mb-2">
           <button
             onClick={handlePrint}
@@ -79,12 +75,15 @@ export default function ResultClient({
         {/* Header Info */}
         <div className="text-center mb-4">
           <span className="text-sm sm:text-md font-normal sm:font-semibold">
-            <p> Baptist Nagar, No.4 Veerapandi, Coimbatore, Tamil Nadu - 641019 </p>
+            <p>
+              {" "}
+              Baptist Nagar, No.4 Veerapandi, Coimbatore, Tamil Nadu - 641019{" "}
+            </p>
             <p> An Accredited Member Of The Asia Theological Association </p>
           </span>
 
           <p className="font-semibold text-xl pt-4 uppercase">
-            Semester Exam Result 
+            Semester Exam Result
           </p>
         </div>
 
@@ -101,7 +100,8 @@ export default function ResultClient({
         </div>
 
         {/* Subjects Table */}
-        <table className="border-collapse  border-black border-2 w-full my-3">
+
+        <table className="border-collapse border-black border-2 w-full my-3">
           <thead className="bg-gray-800 text-white">
             <tr>
               <th className="border px-4 py-2">Subject Code</th>
@@ -110,25 +110,50 @@ export default function ResultClient({
               <th className="border px-4 py-2">Marks</th>
             </tr>
           </thead>
+
           <tbody>
-            {subjects.map((s) => (
-              <tr key={s.code}>
-                <td className="border  px-4 py-2 w-[20%]">{s.code}</td>
-                <td className="border  px-4 py-2 w-[40%]">{s.name}</td>
-                <td className="border  px-4 py-2 text-center w-[20%]">
-                  {s.credits}
-                </td>
-                <td className="border px-4 py-2 text-center w-[20%]">
-                  {student?.[s.field] ?? "0"}
-                </td>
-              </tr>
-            ))}
+            {subjects.map((s) => {
+              const markValue = Number(student?.[s.field]) || 0;
+
+              // Determine pass mark based on course
+              const isDiplomaCourse =
+                course.toLowerCase() === "diploma1" ||
+                course.toLowerCase() === "diploma2";
+              const passMark = isDiplomaCourse ? 50 : 60;
+
+              // Decide text color
+              let textColor = "";
+              if (markValue === 0) {
+                textColor = "text-gray-500"; // Not Applicable
+              } else if (markValue >= passMark) {
+                textColor = "text-green-600"; // Pass
+              } else {
+                textColor = "text-red-600"; // Fail
+              }
+
+              return (
+                <tr key={s.code}>
+                  <td className="border px-4 py-2 w-[20%]">{s.code}</td>
+                  <td className="border px-4 py-2 w-[40%]">{s.name}</td>
+                  <td className="border px-4 py-2 text-center w-[20%]">
+                    {s.credits}
+                  </td>
+                  <td
+                    className={`border px-4 py-2 text-center w-[20%] font-semibold ${textColor}`}
+                  >
+                    {markValue && Number(markValue) > 0
+                      ? markValue
+                      : "Not Applicable"}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
 
         {/* Footer Info */}
         <div className="flex justify-end  sm:text-lg font-bold mr-2 sm:mr-20">
-          <div>Average: {totalMarks}</div>
+          <div>Average: {totalMarks.toFixed(2)}%</div>
         </div>
       </div>
     </div>

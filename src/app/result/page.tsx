@@ -65,20 +65,37 @@ export default async function ResultPage({
     );
   }
 
-  // ✅ Each subject has a max mark = 100
-  const { totalScore } = subjects.reduce(
-    (acc, subj) => {
-      const score = Number(student?.[subj.field]) || 0;
-      return { totalScore: acc.totalScore + score };
-    },
-    { totalScore: 0 }
-  );
+  // // ✅ Each subject has a max mark = 100
+  // const { totalScore } = subjects.reduce(
+  //   (acc, subj) => {
+  //     const score = Number(student?.[subj.field]) || 0;
+  //     return { totalScore: acc.totalScore + score };
+  //   },
+  //   { totalScore: 0 }
+  // );
 
-  // Max marks = number of subjects × 100
-  const totalMax = subjects.length * 100;
+  // // Max marks = number of subjects × 100
+  // const totalMax = subjects.length * 100;
 
-  // Average in %
-  const average = totalMax ? (totalScore / totalMax) * 100 : 0;
+  // // Average in %
+  // const average = totalMax ? (totalScore / totalMax) * 100 : 0;
+
+  // ✅ Calculate only valid marks (exclude "Not Applicable")
+const validSubjects = subjects.filter((subj) => {
+  const score = student?.[subj.field];
+  return score !== undefined && score !== 0 && score !== "";
+});
+
+const totalScore = validSubjects.reduce((sum, subj) => {
+  const score = Number(student?.[subj.field]) || 0;
+  return sum + score;
+}, 0);
+
+const totalMax = validSubjects.length * 100;
+
+// ✅ Safe average calculation
+const average = totalMax ? (totalScore / totalMax) * 100 : 0;
+
 
   return (
 

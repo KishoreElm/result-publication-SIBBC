@@ -25,7 +25,7 @@ export const courseSubjects: Record<string, Subject[]> = {
     { code: "CHMU217", name: "Worship & Church Music", credits: 2, field: "Worship&ChurchMusic_CHMU217" },
   ],
   "BTH-1": [
-    { code: "THES311", name: "Spiritual Formation (CW)", credits: 1, field: "SpiritualFormation(CW)THES311" },
+    { code: "THES311", name: "Spiritual Formation (CW)", credits: 1, field: "SpiritualFormation_THES311" },
     { code: "GEST312", name: "English I", credits: 3, field: "English_I_GEST312" },
     { code: "THES313", name: "Bible Doctrine I", credits: 3, field: "BibleDoctrine_I_THES313" },
     { code: "RLPH314", name: "Major Religions", credits: 2, field: "MajorReligions_RLPH314" },
@@ -51,18 +51,18 @@ export const courseSubjects: Record<string, Subject[]> = {
   { code: "CHED521", name: "Christian Home", credits: 2, field: "ChristianHome_CHED521" },
   { code: "CHMC515", name: "Pastoral & Counselling", credits: 2, field: "Pastoral&Counselling_CHMC515" },
   { code: "HICH514", name: "South Asian Church History", credits: 3, field: "SouthAsianChurchHistory_HICH514" },
-  { code: "THES517", name: "Dispensations", credits: 2, field: "Dispensations_THES517" },
+  { code: "THES519", name: "Dispensations", credits: 2, field: "Dispensations_THES519" },
   { code: "CHMC517", name: "Cross Culture Missions", credits: 3, field: "CrossCultureMissions_CHMC517" }
 ],
 
 "MDIV-1": [
   
   { code: "BINT511", name: "Elementary Greek I", credits: 3, field: "ElementaryGreek_I_BINT511" },
-  { code: "BIOT611", name: "Historical Survey of the OT", credits: 3, field: "HistoricalSurveyOfTheOT_BIOT611" },
+  { code: "RLPH515", name: "World Religions", credits: 2, field: "WorldReligions_RLPH515" },
   { code: "BIOT512", name: "Dispensations", credits: 2, field: "Dispensations_BIOT512" },
   { code: "RLPH514", name: "Modern Religious & Secular Movements", credits: 2, field: "ModernReligious&SecularMovements_RLPH514" },
-  { code: "RLPH515", name: "World Religions", credits: 2, field: "WorldReligions_RLPH515" },
-  { code: "THES523", name: "Christian Ethics", credits: 2, field: "ChristianEthics_THES523" }
+  { code: "THES523", name: "Christian Ethics", credits: 2, field: "ChristianEthics_THES523" },
+  { code: "BIOT512", name: "Historical Survey of the OT", credits: 3, field: "HistoricalSurveyOfTheOT_BIOT512" },
 ],
 
 "MDIV-2": [
@@ -70,111 +70,47 @@ export const courseSubjects: Record<string, Subject[]> = {
   { code: "BINT612", name: "Greek Syntax", credits: 3, field: "GreekSyntax_BINT612" },
   { code: "HICH625", name: "Advanced Church History", credits: 3, field: "AdvancedChurchHistory_HICH625" },
   { code: "GEST612", name: "Research Method & Thesis Writing", credits: 1, field: "ResearchMethod&ThesisWriting_GEST612" },
-  { code: "THES712", name: "Advanced Hermeneutics", credits: 2, field: "AdvancedHermeneutics_THES712" },
+  { code: "THES716", name: "Advanced Hermeneutics", credits: 2, field: "AdvancedHermeneutics_THES716" },
   { code: "THES625", name: "Systematic Theology I", credits: 3, field: "SystematicTheology_I_THES625" },
-
   { code: "CHMA612", name: "Apologetics", credits: 3, field: "Apologetics_CHMA612" },
+  { code: "GEST513", name: "General Psychology", credits: 2, field: "GeneralPsychology_GEST513" },
+  { code: "GESTT516", name: "Human Growth & Development", credits: 2, field: "HumanGrowth&Development_GESTT516" },
+  { code: "CHMC515", name: "Biblical Foundations of Counseling", credits: 3, field: "BiblicalFoundationsofCounseling_CHMCC515" },
+
+],
+"MDIV-3": [
+  { code: "BIOT711", name: "Hebrew Syntax", credits: 3, field: "HebrewSyntax_BIOT711" },
+  { code: "BINT712", name: "Greek Exegesis of Romans", credits: 3, field: "GreekExegesisofRomans_BINTT712" },
+  { code: "THES714", name: "Asian Christian Theology", credits: 2, field: "AsianChristianTheology_THESS714" },
+  { code: "THES625", name: "Systematic Theology 3", credits: 3, field: "SystematicTheology_III_THESS625" },
+  { code: "BINT624", name: "New Testament Biblical Theology", credits: 3, field: "NewTestamentBiblicalTheology_BINTT624" },
+  { code: "CHMI72", name: "Modern Mission Trends", credits: 2, field: "ModernMissionTrends_CHMI72" },
+  { code: "CHMC724", name: "Church Ministries", credits: 2, field: "ChurchMinistries_CHMC724" },
+  { code: "CHMC725", name: "Pastoral Theology", credits: 2, field: "PastoralTheology_CHMCC725" },
+  { code: "CHMC611", name: "Introduction to Philosophy", credits: 3, field: "IntroductiontoPhilosophy_CHMCC611" },
+  { code: "CHMC612", name: "Counseling Theory", credits: 2, field: "CounselingTheory_CHMCC612" },
+  { code: "CHMC613", name: "Premarital Counseling", credits: 2, field: "PremaritalCounseling_CHMC613" },
+  { code: "CHNC615", name: "Addiction Counseling", credits: 2, field: "AddictionCounseling_CHNC615" }
+
+],
+
+
+"MTH-1": [
+  { code: "GEST811"	,name:"Research Methods & Thesis Writing" , credits: 2, field: "ResearchMethods&ThesisWriting_GEST811"},
+  { code: "THES824"	,name:"Christology and Atonement" , credits: 3, field: "ChristologyandAtonement_THES824"},
+  { code: "THESS828"	,name:"Theology Proper & Providence" , credits: 3, field: "TheologyProper&Providence_THES828"},
+  { code: "CHMCC913"	,name:"Issues and Concerns in Ecclesiology Today" , credits: 3, field: "IssuesandConcernsinEcclesiologyToday_CHMC913"},
+  { code: "HICH912"	,name:"Christian Thought and Philosophy" , credits: 3, field: "ChristianThoughtandPhilosophy_HICH912"},
+  { code: "RLPH922"	,name:"Philosophy of Religion" , credits: 3, field: "PhilosophyofReligion_RLPH922"},
+],
+
+"MTH-2": [
+  { code: "THESS915"	,name:"Theological Methods" , credits: 3, field: "TheologicalMethods_THES915"},
+  { code: "THESS821"	,name:"Contemporary Theology" , credits: 2, field: "ContemporaryTheology_THES821"},
+  { code: "THESS816"	,name:"Apologetics" , credits: 3, field: "Apologetics_THES816"},
+  { code: "Elective"	,name:"Eschatology" , credits: 3, field: "Eschatology_Elective"},
+  { code: "CHMCC923"	,name:"Teaching Practicum" , credits: 2, field: "TeachingPracticum_CHMC923"},
 ]
-};
-
-// mdiv2	
-
-// BiblicalHebrew_I_BIOT611	
-// AdvancedChurchHistory_HICH625	
-// GreekSyntax_BINT612	
-// ResearchMethod&ThesisWriting_GEST612	
-// AdvancedHermeneutics_THES712	
-// SystematicTheology_I_THES625	
-// Apologetics_CHMA612
+}
 
 
-// ResearchMethod_GEST511	
-// SystematicTheology_I_THES512	
-// GeneralPsychology_GEST513	
-// OldTestamentBilicalTheology_BIOT514	
-// BiblicalFoundationsofCounselling_CHMC515	
-// HumanGrowth&Development_GEST516
-
-// credits
-
-// Biblical Hebrew I	3
-// Greek  Syntax	3
-// Advance Church History	3	
-// Research Method & Thesis Writing	1
-// Advanced Hermeneutics	2
-// Sytematic Theology (Bible & Theo. Prop)	3
-	
-// GEST 513 General Psychology	2
-// GEST 516 Human Growth & Development 	2
-// CHMC  515 Biblical Foundation of Counselling 	3
-
-
-// mdiv3
-
-// HebrewSyntaxBIOT711	
-// GreekExegesisofRomans_BINT712	
-// AsianChristianTheology_THES714	
-// SystematicTheology_III_THES625	
-// NewTestamentBiblicalTheology_BINT624	
-// ModernMissionTrends_CHMI72
-// PastoralTheology	
-// ChurchMinistries	
-	
-
-// IntroductiontoPhilosophy_CHMC611	
-// CounselingTheory_CHMC612	
-// SystematicTheology_III_THES612	
-// PremaritalCounseling_CHMC613	
-// AdditionCounseling_CHNC615
-
-
-
-// credits
-
-// Modern Mission Trends	2	
-// Church Ministries	2
-// Pastoral Theology	2
-// Asian Christian Theology	2
-// Greek Exegesis of Romans	3
-// New Testament Biblical Theology	3
-// Systematic Theology 3	3
-// Hebrew Syntax	3
-
-// CHMC 613 Premarital Counseling	3
-// Introduction to Philosophy ( CHMC 611)	2
-// CHMC  615 Addiction Counseling	3
-// Counselling Theory CHMC 612	3
-
-
-
-// mth2
-
-// ResearchMethod&ThesisWriting_GEST811
-// Soteriology_THES812	
-// AdvancedChristianCounseling_CHMC815	
-// BiblicalTheologyofMissions_CHMI815	
-// Apologetics_THES816	
-// Reading&IntergratedPaper_Elective
-
-// credits
-	
-// Research Method & Thesis Writing	2
-// Christian Thought and Philosophy 	3
-// Theology Proper & Providence	3
-// Christology and Atonement 	3
-
-
-// mth3
-
-// Dispensationlism_THES911	
-// HistoryofChristianThoughtandPhilosophy_HICH912	
-// IssuesandConcernsinEcclesiologyTodayCHMC913	
-// TheologicalMethods_THES915	
-// BiblicalEthics_THES916
-	
-// credits
-
-// Theological Methods	3
-// Contemporary Theology	2
-// Eschatology	3
-// Apologetics	3
