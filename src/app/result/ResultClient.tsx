@@ -5,6 +5,7 @@ import { useReactToPrint } from "react-to-print";
 import Image from "next/image";
 import DownloadPDFButton from "./DownloadPDFButton";
 import { courseLabels } from "@/lib/airtableTables";
+import PrintableResult from "./PrintableResult";
 
 interface Subject {
   code: string;
@@ -15,7 +16,7 @@ interface Subject {
 
 interface Student {
   OriginalName?: string;
-  Batch?: string | number; // ✅ no any
+  Batch?: string | number;
   [key: string]: string | number | undefined;
 }
 
@@ -36,59 +37,70 @@ export default function ResultClient({
 
   const handlePrint = useReactToPrint({
     contentRef: printRef,
+    pageStyle: `
+      @page { size: A5 portrait; margin: 0; }
+      @media print {
+        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .printable-content { margin: 0 !important; padding: 0 !important; }
+      }
+    `,
   });
 
-  const batch = student?.Batch;
+  const batch = student?.Batch ? String(student.Batch) : "-";
 
   return (
-    <div className=" w-[1400px]  mx-auto bg-white  shadow-lg rounded-3xl ">
-      <div ref={printRef} className="  p-6 printable flex flex-col">
-        <div className="flex justify-end gap-4 mb-2">
-          <button
-            onClick={handlePrint}
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-          >
-            Print
-          </button>
-          <DownloadPDFButton
-            student={student}
-            subjects={subjects}
-            totalMarks={totalMarks}
-            rollNo={rollNo}
-            course={course}
-            batch={batch ? String(batch) : ""}
-          />
-        </div>
+    <div className="w-[1400px]  mx-auto bg-white shadow-lg rounded-3xl">
+      {/* Buttons - Visible on screen, hidden on print */}
+      <div className="flex justify-end gap-4 p-4 print:hidden">
+        <button
+          onClick={handlePrint}
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-medium transition-colors"
+        >
+          Print
+        </button>
+        <DownloadPDFButton
+          student={student}
+          subjects={subjects}
+          totalMarks={totalMarks}
+          course={course}
+          rollNo={rollNo}
+          batch={batch}
+        />
+      </div>
+
+      {/* Screen View: Detailed Result Sheet (Visible on Web) */}
+      <div className="p-6 flex flex-col print:hidden">
+        {" "}
+        {/* Hide on print to avoid duplication */}
         {/* Logo */}
-        <div className="flex justify-center mb-4 ">
+        <div className="flex justify-center mb-4">
           <Image
             src="/images/SIBBC_Logo_New_40_yellow.png"
             alt="Logo"
             height={35}
             width={450}
-            // fill
-            // className="object-contain"
             priority
           />
         </div>
-
         {/* Header Info */}
         <div className="text-center mb-4">
-          <span className="text-sm sm:text-md font-normal sm:font-semibold">
+          <span className="text-sm sm:text-md font-normal sm:font-semibold leading-tight">
             <p>
-              {" "}
-              Baptist Nagar, No.4 Veerapandi, Coimbatore, Tamil Nadu - 641019{" "}
+              Baptist Nagar, No.4 Veerapandi, Coimbatore, Tamil Nadu - 641019
             </p>
-            <p> An Accredited Member Of The Asia Theological Association </p>
+            <p className="italic">
+              An Accredited Member Of The Asia Theological Association
+            </p>
           </span>
-
           <p className="font-semibold text-xl pt-4 uppercase">
             Semester Exam Result
           </p>
+          {/* <p className="font-semibold text-lg pt-2 uppercase">
+            {courseLabels[course]} Batch - {batch}
+          </p> */}
         </div>
-
         {/* Student Info */}
-        <div className="flex justify-around text-sm  sm:text-lg font-bold ">
+        <div className="flex justify-around text-sm sm:text-lg font-bold mb-4">
           <div className="flex flex-col sm:flex-row justify-between gap-1 sm:gap-20">
             <div>Name: {student?.OriginalName ?? "-"}</div>
             <div>Roll No: {rollNo}</div>
@@ -98,22 +110,29 @@ export default function ResultClient({
             <div>Batch: {batch}</div>
           </div>
         </div>
-
-        {/* Subjects Table */}
-
-        <table className="border-collapse border-black border-2 w-full my-3">
+        {/* Subjects Table (Screen Version) */}
+        <table className="border-collapse border-gray-700 border-2 w-full my-3">
           <thead className="bg-gray-800 text-white">
             <tr>
-              <th className="border px-4 py-2">Subject Code</th>
-              <th className="border px-4 py-2">Subject Name</th>
-              <th className="border px-4 py-2">Credits</th>
-              <th className="border px-4 py-2">Marks</th>
+              <th className="border border-gray-700 px-4 py-2 text-left">
+                Subject Code
+              </th>
+              <th className="border border-gray-700 px-4 py-2 text-left">
+                Subject Name
+              </th>
+              <th className="border border-gray-700 px-4 py-2 text-center">
+                Credits
+              </th>
+              <th className="border border-gray-700 px-4 py-2 text-center">
+                Marks
+              </th>
             </tr>
           </thead>
-
           <tbody>
             {subjects.map((s) => {
-              const markValue = Number(student?.[s.field]) || 0;
+              const rawMark = student?.[s.field];
+              const markValue =
+                rawMark !== undefined && rawMark !== "" ? Number(rawMark) : NaN;
 
               // Determine pass mark based on course
               const isDiplomaCourse =
@@ -123,8 +142,8 @@ export default function ResultClient({
 
               // Decide text color
               let textColor = "";
-              if (markValue === 0) {
-                textColor = "text-gray-500"; // Not Applicable
+              if (isNaN(markValue)) {
+                textColor = "text-gray-500"; // NA
               } else if (markValue >= passMark) {
                 textColor = "text-green-600"; // Pass
               } else {
@@ -132,29 +151,45 @@ export default function ResultClient({
               }
 
               return (
-                <tr key={s.code}>
-                  <td className="border px-4 py-2 w-[20%]">{s.code}</td>
-                  <td className="border px-4 py-2 w-[40%]">{s.name}</td>
-                  <td className="border px-4 py-2 text-center w-[20%]">
+                <tr key={s.code} className="even:bg-gray-50">
+                  <td className="border border-gray-700 px-4 py-2 w-[20%]">
+                    {s.code}
+                  </td>
+                  <td className="border border-gray-700 px-4 py-2 w-[40%]">
+                    {s.name}
+                  </td>
+                  <td className="border border-gray-700 px-4 py-2 text-center w-[20%]">
                     {s.credits}
                   </td>
                   <td
-                    className={`border px-4 py-2 text-center w-[20%] font-semibold ${textColor}`}
+                    className={`border border-gray-700 px-4 py-2 text-center w-[20%] font-semibold ${textColor}`}
                   >
-                    {markValue && Number(markValue) > 0
-                      ? markValue
-                      : "Not Applicable"}
+                    {!isNaN(markValue) ? markValue : "NA"}
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-
-        {/* Footer Info */}
-        <div className="flex justify-end  sm:text-lg font-bold mr-2 sm:mr-20">
-          <div>Average: {totalMarks.toFixed(2)}%</div>
+        {/* Footer Info (Screen) */}
+        <div className="flex justify-end text-lg font-bold mr-2 sm:mr-20">
+          <div>Average: {totalMarks.toFixed(2)}</div>
         </div>
+      </div>
+
+      {/* Print View: Hidden PrintableResult (Captured on Print, A5 Size) */}
+      <div
+        ref={printRef}
+        className="hidden print:block print:w-[148mm] print:min-h-[210mm] print:mx-auto"
+      >
+        <PrintableResult
+          student={student}
+          subjects={subjects}
+          totalMarks={totalMarks}
+          course={course}
+          rollNo={rollNo}
+          batch={batch}
+        />
       </div>
     </div>
   );

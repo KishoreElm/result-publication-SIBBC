@@ -38,7 +38,7 @@ export default function DownloadPDFButton({
 
     // Add Logo (if hosted in /public/images)
     const imgUrl = "/images/SIBBC_Logo_New_40_yellow.png";
-    doc.addImage(imgUrl, "PNG", 60, 10, 90, 20); // (x, y, width, height)
+    doc.addImage(imgUrl, "PNG", 60, 10, 80, 25); // (x, y, width, height)
 
     // College details
     doc.setFontSize(10);
@@ -55,14 +55,14 @@ export default function DownloadPDFButton({
 
     // Title
     doc.setFontSize(14);
-    doc.text("Student Transcript", 80, 55);
+    doc.text(`${courseLabels[course]} Batch - ${batch} `, 60, 55);
 
     // Student Info
     doc.setFontSize(12);
     doc.text(`Name: ${student?.OriginalName ?? "-"}`, 14, 70);
-    doc.text(`Roll No: ${rollNo}`, 100, 70);
-    doc.text(`Course:  ${courseLabels[course]}`, 14, 78);
-    doc.text(`Batch: ${batch}`, 100, 78);
+    doc.text(`Roll No: ${rollNo}`, 150, 70);
+    // doc.text(`Course:  ${courseLabels[course]}`, 14, 78);
+    // doc.text(`Batch: ${batch}`, 120, 70);
 
     // Table
     autoTable(doc, {
@@ -70,10 +70,10 @@ export default function DownloadPDFButton({
       body: subjects.map((s) => [
         s.code,
         s.name,
-        s.credits,
-        student?.[s.field] ?? "-",
+        s.credits ,
+        student?.[s.field] ?? "N/A",
       ]),
-      startY: 90,
+      startY: 80,
     });
 
     //  Footer (credits + marks)
@@ -81,11 +81,11 @@ export default function DownloadPDFButton({
     const finalY = doc.lastAutoTable?.finalY ?? 100;
 
     doc.setFontSize(12);
-    doc.text("No. of Credits Required: 19", 14, finalY + 10);
-    doc.text(`Overall Marks: ${totalMarks}`, 150, finalY + 10);
+    // doc.text("No. of Credits Required: 19", 14, finalY + 10);
+    doc.text(`Average: ${totalMarks.toFixed(2)}`, 145, finalY + 12);
 
     //  Save File
-    doc.save("student_transcript.pdf");
+    doc.save(`${student?.OriginalName ?? "student "}_${rollNo}_Semester_Result.pdf`);
   };
 
   return (

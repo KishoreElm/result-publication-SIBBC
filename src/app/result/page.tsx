@@ -3,6 +3,7 @@ import { airtableTables, normalizeCourseKey } from "@/lib/airtableTables";
 import { courseSubjects, Subject } from "@/lib/subjects";
 import ResultClient from "./ResultClient";
 import Image from "next/image";
+import { log } from "console";
 
 interface StudentFields {
   RollNo?: string;
@@ -65,25 +66,14 @@ export default async function ResultPage({
     );
   }
 
-  // // ✅ Each subject has a max mark = 100
-  // const { totalScore } = subjects.reduce(
-  //   (acc, subj) => {
-  //     const score = Number(student?.[subj.field]) || 0;
-  //     return { totalScore: acc.totalScore + score };
-  //   },
-  //   { totalScore: 0 }
-  // );
 
-  // // Max marks = number of subjects × 100
-  // const totalMax = subjects.length * 100;
 
-  // // Average in %
-  // const average = totalMax ? (totalScore / totalMax) * 100 : 0;
-
-  // ✅ Calculate only valid marks (exclude "Not Applicable")
+// Calculate only valid marks (exclude "Not Applicable")
 const validSubjects = subjects.filter((subj) => {
   const score = student?.[subj.field];
-  return score !== undefined && score !== 0 && score !== "";
+  console.log("Score for subject", subj.code, ":", score);
+  
+  return  score;
 });
 
 const totalScore = validSubjects.reduce((sum, subj) => {
@@ -97,21 +87,22 @@ const totalMax = validSubjects.length * 100;
 const average = totalMax ? (totalScore / totalMax) * 100 : 0;
 
 
+
   return (
 
-     <div className="relative h-screen w-full">
+     <div className="relative w-full">
     
           <Image
             src="/images/Copy of COLLEGE MAIN BLOCK.jpg"
             alt="College Main Block"
             fill
-            className="object-cover  h-screen w-full"
+            className="object-cover w-full"
             priority
           />
           <div className="absolute inset-0 bg-black/40" >
           </div>
-    
-          <div className="z-index-10 relative h-full w-full flex items-center justify-center">
+
+          <div className="z-index-10 relative w-full flex items-center justify-center">
             {/* <AirtablePage /> */}
           <ResultClient
             student={student}
