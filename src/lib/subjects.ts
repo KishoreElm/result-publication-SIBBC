@@ -13,7 +13,7 @@ export const courseSubjects: Record<string, Subject[]> = {
     { code: "BINT114", name: "Life of Christ", credits: 2, field: "LifeOfChrist_BINT114" },
     { code: "CHED115", name: "Study Methods", credits: 2, field: "StudyMethods_CHED115" },
     { code: "RLPH125", name: "World Religions", credits: 2, field: "WorldReligions_RLPH125" },
-    { code: "GEST117", name: "Computing in Ministry", credits: 2, field: "ComputingInMinistry_GEST117" },
+    { code: "BIOT126", name: "Bible Geography", credits: 2, field: "BibleGeography_BIOT126" },
   ],
   "Diploma-2": [
     { code: "THES211", name: "Basic Theology I", credits: 3, field: "BasicTheology_I_THES211" },
@@ -48,10 +48,10 @@ export const courseSubjects: Record<string, Subject[]> = {
   { code: "BINT512", name: "Greek IV", credits: 3, field: "Greek_IV_BINT512" },
   { code: "BINT513", name: "Pastoral Epistles", credits: 2, field: "PastoralEpistles_BINT513" },
   { code: "BINT516", name: "1 & 2 Corinthians", credits: 3, field: "1&2Corinthians_BINT516" },
-  { code: "CHED521", name: "Christian Home", credits: 2, field: "ChristianHome_CHED521" },
   { code: "CHMC515", name: "Pastoral & Counselling", credits: 2, field: "Pastoral&Counselling_CHMC515" },
   { code: "HICH514", name: "South Asian Church History", credits: 3, field: "SouthAsianChurchHistory_HICH514" },
   { code: "THES519", name: "Dispensations", credits: 2, field: "Dispensations_THES519" },
+  { code: "BIOT518", name: "Poetical Wisdom and Literature", credits: 3, field: "PoeticalWisdomandLiterature_BIOT518" },
   { code: "CHMC517", name: "Cross Culture Missions", credits: 3, field: "CrossCultureMissions_CHMC517" }
 ],
 
@@ -84,14 +84,11 @@ export const courseSubjects: Record<string, Subject[]> = {
   { code: "THES714", name: "Asian Christian Theology", credits: 2, field: "AsianChristianTheology_THESS714" },
   { code: "THES625", name: "Systematic Theology 3", credits: 3, field: "SystematicTheology_III_THESS625" },
   { code: "BINT624", name: "New Testament Biblical Theology", credits: 3, field: "NewTestamentBiblicalTheology_BINTT624" },
-  { code: "CHMI72", name: "Modern Mission Trends", credits: 2, field: "ModernMissionTrends_CHMI72" },
-  { code: "CHMC724", name: "Church Ministries", credits: 2, field: "ChurchMinistries_CHMC724" },
   { code: "CHMC725", name: "Pastoral Theology", credits: 2, field: "PastoralTheology_CHMCC725" },
-  { code: "CHMC611", name: "Introduction to Philosophy", credits: 3, field: "IntroductiontoPhilosophy_CHMCC611" },
-  { code: "CHMC612", name: "Counseling Theory", credits: 2, field: "CounselingTheory_CHMCC612" },
   { code: "CHMC613", name: "Premarital Counseling", credits: 2, field: "PremaritalCounseling_CHMC613" },
-  { code: "CHNC615", name: "Addiction Counseling", credits: 2, field: "AddictionCounseling_CHNC615" }
-
+  { code: "CHMC724", name: "Church Ministries", credits: 2, field: "ChurchMinistries_CHMC724" },
+  { code: "CHMC612", name: "Counseling Theory", credits: 2, field: "CounselingTheory_CHMCC612" },
+  { code:"CHMI517", name:"Cultural Anthropology", credits:2, field:"CulturalAnthropology_CHMI517"},
 ],
 
 
