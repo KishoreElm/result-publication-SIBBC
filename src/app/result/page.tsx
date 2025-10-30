@@ -71,7 +71,6 @@ export default async function ResultPage({
 // Calculate only valid marks (exclude "Not Applicable")
 const validSubjects = subjects.filter((subj) => {
   const score = student?.[subj.field];
-  console.log("Score for subject", subj.code, ":", score);
   
   return  score;
 });
@@ -90,13 +89,13 @@ const average = totalMax ? (totalScore / totalMax) * 100 : 0;
 
   return (
 
-     <div className="relative w-full">
+     <div className="relative w-full h-lvh flex items-center justify-center overflow-hidden">
     
           <Image
             src="/images/Copy of COLLEGE MAIN BLOCK.jpg"
             alt="College Main Block"
             fill
-            className="object-cover w-full"
+            className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-black/40" >
