@@ -6,6 +6,7 @@ export interface Subject {
 }
 
 export const courseSubjects: Record<string, Subject[]> = { 
+
 "Diploma-1": [
     { code: "CHMC111", name: "Spiritual Formation I", credits: 2, field: "SpiritualFormation_I_CHMC111" },
     { code: "GEST112", name: "English I", credits: 3, field: "English_I_GEST112" },
@@ -15,6 +16,7 @@ export const courseSubjects: Record<string, Subject[]> = {
     { code: "RLPH125", name: "World Religions", credits: 2, field: "WorldReligions_RLPH125" },
     { code: "BIOT126", name: "Bible Geography", credits: 2, field: "BibleGeography_BIOT126" },
   ],
+
   "Diploma-2": [
     { code: "THES211", name: "Basic Theology I", credits: 3, field: "BasicTheology_I_THES211" },
     { code: "GEST212", name: "English III", credits: 3, field: "English_III_GEST212" },
@@ -24,6 +26,7 @@ export const courseSubjects: Record<string, Subject[]> = {
     { code: "GEST216", name: "Christian Stewardship", credits: 2, field: "ChristianStewardship_GEST216" },
     { code: "CHMU217", name: "Worship & Church Music", credits: 2, field: "Worship&ChurchMusic_CHMU217" },
   ],
+
   "BTH-1": [
     { code: "THES311", name: "Spiritual Formation (CW)", credits: 1, field: "SpiritualFormation_THES311" },
     { code: "GEST312", name: "English I", credits: 3, field: "English_I_GEST312" },
@@ -34,6 +37,7 @@ export const courseSubjects: Record<string, Subject[]> = {
     { code: "CHMC318", name: "Bible Manners & Geography", credits: 2, field: "BibleManners&BibleGeography_CHMC318" },
     { code: "GEST419", name: "Academic Writing", credits: 1, field: "AcademicWriting_GEST419" },
   ],
+
   "BTH-2": [
     { code: "BINT412", name: "Greek II", credits: 3, field: "GreekII_BINT412" },
     { code: "GEST412", name: "English III", credits: 3, field: "English_III_GEST412" },
@@ -44,6 +48,7 @@ export const courseSubjects: Record<string, Subject[]> = {
     { code: "CHMI417", name: "Introduction to Missions", credits: 2, field: "IntroductionToMissions_CHMI417" },
     { code: "GEST416", name: "Introduction to Psychology", credits: 3, field: "IntroductionToPsychology_GEST416" }
 ],
+
 "BTH-3": [
   { code: "BINT512", name: "Greek IV", credits: 3, field: "Greek_IV_BINT512" },
   { code: "BINT513", name: "Pastoral Epistles", credits: 2, field: "PastoralEpistles_BINT513" },
@@ -52,17 +57,17 @@ export const courseSubjects: Record<string, Subject[]> = {
   { code: "HICH514", name: "South Asian Church History", credits: 3, field: "SouthAsianChurchHistory_HICH514" },
   { code: "THES519", name: "Dispensations", credits: 2, field: "Dispensations_THES519" },
   { code: "BIOT518", name: "Poetical Wisdom and Literature", credits: 3, field: "PoeticalWisdomandLiterature_BIOT518" },
-  { code: "CHMC517", name: "Cross Culture Missions", credits: 3, field: "CrossCultureMissions_CHMC517" }
+  { code: "CHMC517", name: "Cross Culture Missions", credits: 3, field: "CrossCulturalMissions_CHMC517" }
 ],
 
 "MDIV-1": [
-  
   { code: "BINT511", name: "Elementary Greek I", credits: 3, field: "ElementaryGreek_I_BINT511" },
-  { code: "RLPH515", name: "World Religions", credits: 2, field: "WorldReligions_RLPH515" },
+  { code: "BIOT512", name: "Historical Survey of the OT", credits: 3, field: "HistoricalSurveyOfTheOT_BIOT512" },
   { code: "BIOT512", name: "Dispensations", credits: 2, field: "Dispensations_BIOT512" },
   { code: "RLPH514", name: "Modern Religious & Secular Movements", credits: 2, field: "ModernReligious&SecularMovements_RLPH514" },
+  { code: "RLPH515", name: "World Religions", credits: 2, field: "WorldReligions_RLPH515" },
+  { code: "HICH625", name:"Advanced Church History", credits: 3, field: "AdvancedChurchHistory_HICH625" },
   { code: "THES523", name: "Christian Ethics", credits: 2, field: "ChristianEthics_THES523" },
-  { code: "BIOT512", name: "Historical Survey of the OT", credits: 3, field: "HistoricalSurveyOfTheOT_BIOT512" },
 ],
 
 "MDIV-2": [
@@ -72,12 +77,12 @@ export const courseSubjects: Record<string, Subject[]> = {
   { code: "GEST612", name: "Research Method & Thesis Writing", credits: 1, field: "ResearchMethod&ThesisWriting_GEST612" },
   { code: "THES716", name: "Advanced Hermeneutics", credits: 2, field: "AdvancedHermeneutics_THES716" },
   { code: "THES625", name: "Systematic Theology I", credits: 3, field: "SystematicTheology_I_THES625" },
-  { code: "CHMA612", name: "Apologetics", credits: 3, field: "Apologetics_CHMA612" },
   { code: "GEST513", name: "General Psychology", credits: 2, field: "GeneralPsychology_GEST513" },
-  { code: "GESTT516", name: "Human Growth & Development", credits: 2, field: "HumanGrowth&Development_GESTT516" },
   { code: "CHMC515", name: "Biblical Foundations of Counseling", credits: 3, field: "BiblicalFoundationsofCounseling_CHMCC515" },
-
+  { code: "GESTT516", name: "Human Growth & Development", credits: 2, field: "HumanGrowth&Development_GESTT516" },
+  { code: "CHMA612", name: "Apologetics", credits: 3, field: "Apologetics_CHMA612" },
 ],
+
 "MDIV-3": [
   { code: "BIOT711", name: "Hebrew Syntax", credits: 3, field: "HebrewSyntax_BIOT711" },
   { code: "BINT712", name: "Greek Exegesis of Romans", credits: 3, field: "GreekExegesisofRomans_BINTT712" },
@@ -90,7 +95,6 @@ export const courseSubjects: Record<string, Subject[]> = {
   { code: "CHMC612", name: "Counseling Theory", credits: 2, field: "CounselingTheory_CHMCC612" },
   { code:"CHMI517", name:"Cultural Anthropology", credits:2, field:"CulturalAnthropology_CHMI517"},
 ],
-
 
 "MTH-1": [
   { code: "GEST811"	,name:"Research Methods & Thesis Writing" , credits: 2, field: "ResearchMethods&ThesisWriting_GEST811"},
