@@ -66,8 +66,8 @@ export default function LoginPage() {
           <option value="mdiv1">MDIV I</option>
           <option value="mdiv2">MDIV II</option>
           <option value="mdiv3">MDIV III</option>
-          <option value="mth2">MTH II</option>
-          <option value="mth3">MTH III</option>
+          <option value="mth2">MTH I</option>
+          <option value="mth3">MTH II</option>
         </select>
         <div className="flex justify-center">
           <button className="bg-blue-600 text-white font-semibold text-xl p-4 w-50 rounded-full mt-3 hover:bg-blue-700 ">
