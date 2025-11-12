@@ -152,16 +152,13 @@ export default function PrintableResult({
           <div className="text-right text-[10.5pt] font-semibold mt-2">
             Average: {totalMarks.toFixed(2)}
           </div>
-
+          
           {/* Footer */}
-       <div className="flex justify-between mt-6 text-[9pt] text-gray-700">
-          <div>____________________</div>
-          <div>____________________</div>
-        </div>
-        <div className="flex justify-between text-[9pt] text-gray-600 mt-[-6px]">
-          <div className="">Head Of The Department</div>
-          <div>Academic Dean</div>
-        </div>
+          <div className="flex justify-between mt-6 text-[9pt] text-gray-700">
+            <div className="font-semibold text-[11pt] text-center w-full">
+              "For student information only not for official use."
+            </div>
+          </div>
         </div>
       </div>
 
