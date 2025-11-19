@@ -3,7 +3,6 @@ import { airtableTables, normalizeCourseKey } from "@/lib/airtableTables";
 import { courseSubjects, Subject } from "@/lib/subjects";
 import ResultClient from "./ResultClient";
 import Image from "next/image";
-import { log } from "console";
 
 interface StudentFields {
   RollNo?: string;

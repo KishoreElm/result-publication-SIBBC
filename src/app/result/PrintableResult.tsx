@@ -156,7 +156,7 @@ export default function PrintableResult({
           {/* Footer */}
           <div className="flex justify-between mt-6 text-[9pt] text-gray-700">
             <div className="font-semibold text-[11pt] text-center w-full">
-              For student information only not for official use.
+              For student information only not for official use
             </div>
           </div>
         </div>
