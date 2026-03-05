@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { useReactToPrint } from "react-to-print";
 import Image from "next/image";
 import DownloadPDFButton from "./DownloadPDFButton";
@@ -34,6 +35,8 @@ export default function ResultClient({
   rollNo: string;
 }) {
   const printRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams();
+  const shouldAutoDownload = searchParams.get("autoDownload") === "true";
 
   const handlePrint = useReactToPrint({
     contentRef: printRef,
@@ -52,12 +55,12 @@ export default function ResultClient({
     <div className="w-[1400px]  mx-auto bg-white shadow-lg rounded-3xl">
       {/* Buttons - Visible on screen, hidden on print */}
       <div className="flex justify-end gap-4 p-4 print:hidden">
-        <button
+        {/* <button
           onClick={handlePrint}
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-medium transition-colors"
         >
           Print
-        </button>
+        </button> */}
         <DownloadPDFButton
           student={student}
           subjects={subjects}
@@ -65,6 +68,7 @@ export default function ResultClient({
           course={course}
           rollNo={rollNo}
           batch={batch}
+          autoDownload={shouldAutoDownload}
         />
       </div>
 

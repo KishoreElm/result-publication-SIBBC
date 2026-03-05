@@ -15,7 +15,7 @@ export default function LoginPage() {
       alert("Please enter Roll Number and select a Course");
       return;
     }
-    router.push(`/result?rollNo=${rollNo}&course=${course}`);
+    router.push(`/result?rollNo=${rollNo}&course=${course}&autoDownload=true`);
   };
 
   return (

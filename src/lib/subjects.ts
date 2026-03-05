@@ -7,111 +7,113 @@ export interface Subject {
 
 export const courseSubjects: Record<string, Subject[]> = { 
 
-"Diploma-1": [
-    { code: "CHMC111", name: "Spiritual Formation I", credits: 2, field: "SpiritualFormation_I_CHMC111" },
-    { code: "GEST112", name: "English I", credits: 3, field: "English_I_GEST112" },
-    { code: "BIOT113", name: "Old Testament Survey", credits: 3, field: "OldTestamentSurvey_BIOT113" },
-    { code: "BINT114", name: "Life of Christ", credits: 2, field: "LifeOfChrist_BINT114" },
-    { code: "CHED115", name: "Study Methods", credits: 2, field: "StudyMethods_CHED115" },
-    { code: "RLPH125", name: "World Religions", credits: 2, field: "WorldReligions_RLPH125" },
-    { code: "BIOT126", name: "Bible Geography", credits: 2, field: "BibleGeography_BIOT126" },
+  "Diploma-1": [
+    { code: "CHMC121", name: "Spiritual Formation II", credits: 2, field: "SpiritualFormation_II_CHMC121" },
+    { code: "GEST122", name: "English II", credits: 3, field: "English_II_GEST122" },
+    { code: "BINT123", name: "NT Survey", credits: 3, field: "NTSurvey_BINT123" },
+    { code: "CHMI124", name: "Children Ministry", credits: 2, field: "ChildrenMinistry_CHMI124" },
+    { code: "CHED126", name: "Bible Storying", credits: 2, field: "BibleStorying_CHED126" },
+    { code: "GEST127", name: "Computing in Ministry", credits: 2, field: "ComputingInMinistry_GEST127" },
+    { code: "CHMC127", name: "Public Speaking", credits: 2, field: "PublicSpeaking_CHMC127" }
   ],
 
   "Diploma-2": [
-    { code: "THES211", name: "Basic Theology I", credits: 3, field: "BasicTheology_I_THES211" },
-    { code: "GEST212", name: "English III", credits: 3, field: "English_III_GEST212" },
-    { code: "CHMC213", name: "Church Ministries", credits: 2, field: "ChurchMinistries_CHMC213" },
-    { code: "THES214", name: "Bible Interpretation", credits: 2, field: "BibleInterpretation_THES214" },
-    { code: "HICH215", name: "History of Israel", credits: 2, field: "HistoryOfIsrael_HICH215" },
-    { code: "GEST216", name: "Christian Stewardship", credits: 2, field: "ChristianStewardship_GEST216" },
-    { code: "CHMU217", name: "Worship & Church Music", credits: 2, field: "Worship&ChurchMusic_CHMU217" },
+    { code: "THES221", name: "Basic Theology II", credits: 3, field: "BasicTheology_II_THES221" },
+    { code: "GEST222", name: "English IV", credits: 2, field: "English_IV_GEST222" },
+    { code: "CHMI223", name: "Missionary Biography", credits: 2, field: "MissionaryBiography_CHMI223" },
+    { code: "CHMC224", name: "Evangelism", credits: 2, field: "Evangelism_CHMC224" },
+    { code: "CHMC225", name: "Principles of Church Growth", credits: 2, field: "PrinciplesOfChurchGrowth_CHMC225" },
+    { code: "HICH226", name: "Introduction to Church History", credits: 2, field: "IntroductionToChurchHistory_HICH226" },
+    { code: "CHMC227", name: "Practice Preaching", credits: 2, field: "PracticePreaching_CHMC227" }
   ],
 
   "BTH-1": [
-    { code: "THES311", name: "Spiritual Formation (CW)", credits: 1, field: "SpiritualFormation_THES311" },
-    { code: "GEST312", name: "English I", credits: 3, field: "English_I_GEST312" },
-    { code: "THES313", name: "Bible Doctrine I", credits: 3, field: "BibleDoctrine_I_THES313" },
-    { code: "RLPH314", name: "Major Religions", credits: 2, field: "MajorReligions_RLPH314" },
-    { code: "BIOT315", name: "Pentateuch", credits: 3, field: "Pentateuch_BIOT315" },
-    { code: "BINT317", name: "Gospels", credits: 3, field: "Gospels_BINT317" },
-    { code: "CHMC318", name: "Bible Manners & Geography", credits: 2, field: "BibleManners&BibleGeography_CHMC318" },
-    { code: "GEST419", name: "Academic Writing", credits: 1, field: "AcademicWriting_GEST419" },
+    { code: "BINT321", name: "Greek I", credits: 3, field: "Greek_I_BINT321" },
+    { code: "GEST322", name: "English II", credits: 3, field: "English_II_GEST322" },
+    { code: "THES323", name: "Bible Doctrine II", credits: 3, field: "BibleDoctrine_II_THES323" },
+    { code: "THES325", name: "Christian Evidences", credits: 3, field: "ChristianEvidences_THES325" },
+    { code: "BINT327", name: "Acts of the Apostles", credits: 2, field: "ActsOfTheApostles_BINT327" },
+    { code: "HICH328", name: "Baptist Distinctives", credits: 2, field: "BaptistDistinctives_HICH328" },
+    { code: "CHMU325", name: "Music Appreciation", credits: 2, field: "MusicAppreciation_CHMU325" }
   ],
 
-  "BTH-2": [
-    { code: "BINT412", name: "Greek II", credits: 3, field: "GreekII_BINT412" },
-    { code: "GEST412", name: "English III", credits: 3, field: "English_III_GEST412" },
-    { code: "THES413", name: "Bible Doctrine III", credits: 3, field: "BibleDoctrine_III_THES413" },
-    { code: "HICH414", name: "Church History", credits: 3, field: "ChurchHistory_HICH414" },
-    { code: "THES415", name: "Biblical Hermeneutics", credits: 3, field: "BiblicalHermeneutics_THES415" },
-    { code: "BINT418", name: "Romans & Galatians", credits: 2, field: "Romans&Galatians_BINT418" },
-    { code: "CHMI417", name: "Introduction to Missions", credits: 2, field: "IntroductionToMissions_CHMI417" },
-    { code: "GEST416", name: "Introduction to Psychology", credits: 3, field: "IntroductionToPsychology_GEST416" }
-],
+  "BTH-2": [ 
+    { code: "BINT421", name: "Greek III", credits: 3, field: "Greek_III_BINT421" },
+    { code: "GEST422", name: "English IV", credits: 3, field: "English_IV_GEST422" },
+    { code: "THES422", name: "Bible Doctrine IV", credits: 3, field: "BibleDoctrine_IV_THES422" },
+    { code: "CHMC424", name: "Homiletics", credits: 3, field: "Homiletics_CHMC424" },
+    { code: "BINT425", name: "Prison Epistles & Thessalonians", credits: 2, field: "PrisonEpistles&Thessalonians_BINT425" },
+    { code: "BIOT427", name: "OT Historical Books", credits: 2, field: "OTHistoricalBooks_BIOT427" },
+    { code: "CHMC426", name: "Pastoral Leadership & Church Administration", credits: 2, field: "PastoralLeadership&ChurchAdministration_CHMC426" },
+    { code: "CHMU417", name: "Biblical Principles of Church Music", credits: 3, field: "BiblicalPrinciplesOfChurchMusic_CHMU417" }
+  ],
 
-"BTH-3": [
-  { code: "BINT512", name: "Greek IV", credits: 3, field: "Greek_IV_BINT512" },
-  { code: "BINT513", name: "Pastoral Epistles", credits: 2, field: "PastoralEpistles_BINT513" },
-  { code: "BINT516", name: "1 & 2 Corinthians", credits: 3, field: "1&2Corinthians_BINT516" },
-  { code: "CHMC515", name: "Pastoral & Counselling", credits: 2, field: "Pastoral&Counselling_CHMC515" },
-  { code: "HICH514", name: "South Asian Church History", credits: 3, field: "SouthAsianChurchHistory_HICH514" },
-  { code: "THES519", name: "Dispensations", credits: 2, field: "Dispensations_THES519" },
-  { code: "BIOT518", name: "Poetical Wisdom and Literature", credits: 3, field: "PoeticalWisdomandLiterature_BIOT518" },
-  { code: "CHMC517", name: "Cross Culture Missions", credits: 3, field: "CrossCulturalMissions_CHMC517" }
-],
+  "BTH-3": [
+    { code: "BINT525", name: "Daniel & Revelation", credits: 3, field: "Daniel&Revelation_BINT525" },
+    { code: "CHMC324", name: "Cults & Occult", credits: 2, field: "Cults&Occult_CHMC324" },
+    { code: "BIOT522", name: "OT Prophetical Books", credits: 3, field: "OTHistoricalBooks_BIOT522" },
+    { code: "CHED524", name: "Christian Ethics", credits: 3, field: "ChristianEthics_CHED524" },
+    { code: "CHED521", name: "Christian Home", credits: 2, field: "ChristianHome_CHED521" },
+    { code: "BINT526", name: "General Epistles & Hebrew", credits: 3, field: "GeneralEpistles&Hebrew_BINT526" }
+  ],
 
-"MDIV-1": [
-  { code: "BINT511", name: "Elementary Greek I", credits: 3, field: "ElementaryGreek_I_BINT511" },
-  { code: "BIOT512", name: "Historical Survey of the OT", credits: 3, field: "HistoricalSurveyOfTheOT_BIOT512" },
-  { code: "BIOT512", name: "Dispensations", credits: 2, field: "Dispensations_BIOT512" },
-  { code: "RLPH514", name: "Modern Religious & Secular Movements", credits: 2, field: "ModernReligious&SecularMovements_RLPH514" },
-  { code: "RLPH515", name: "World Religions", credits: 2, field: "WorldReligions_RLPH515" },
-  { code: "HICH625", name:"Advanced Church History", credits: 3, field: "AdvancedChurchHistory_HICH625" },
-  { code: "THES523", name: "Christian Ethics", credits: 2, field: "ChristianEthics_THES523" },
-],
+  "MDIV-1": [
+    { code: "BINT521", name: "Intermediate Greek – 2", credits: 3, field: "IntermediateGreek_II_BINT521" },
+    { code: "BINT522", name: "Chronological Survey of the NT", credits: 3, field: "ChronologicalSurveyOfTheNT_BINT522" },
+    { code: "HICH526", name: "History of South Asian Christianity-1", credits: 2, field: "HistoryOfSouthAsianChristianityI_HICH526" },
+    { code: "BINT527", name: "Introduction to Gospels", credits: 3, field: "IntroductionToGospels_BINT527" },
+    { code: "THES516", name: "Introduction to Theology", credits: 2, field: "IntroductionToTheology_THES516" },
+    { code: "CHMC525", name: "Communication Theory & Practice", credits: 2, field: "CommunicationTheory&Practice_CHMC525" }
 
-"MDIV-2": [
-  { code: "BIOT611", name: "Biblical Hebrew I", credits: 3, field: "BiblicalHebrew_I_BIOT611" },
-  { code: "BINT612", name: "Greek Syntax", credits: 3, field: "GreekSyntax_BINT612" },
-  { code: "HICH625", name: "Advanced Church History", credits: 3, field: "AdvancedChurchHistory_HICH625" },
-  { code: "GEST612", name: "Research Method & Thesis Writing", credits: 1, field: "ResearchMethod&ThesisWriting_GEST612" },
-  { code: "THES716", name: "Advanced Hermeneutics", credits: 2, field: "AdvancedHermeneutics_THES716" },
-  { code: "THES625", name: "Systematic Theology I", credits: 3, field: "SystematicTheology_I_THES625" },
-  { code: "GEST513", name: "General Psychology", credits: 2, field: "GeneralPsychology_GEST513" },
-  { code: "CHMC515", name: "Biblical Foundations of Counseling", credits: 3, field: "BiblicalFoundationsofCounseling_CHMCC515" },
-  { code: "GESTT516", name: "Human Growth & Development", credits: 2, field: "HumanGrowth&Development_GESTT516" },
-  { code: "CHMA612", name: "Apologetics", credits: 3, field: "Apologetics_CHMA612" },
-],
+  ],
 
-"MDIV-3": [
-  { code: "BIOT711", name: "Hebrew Syntax", credits: 3, field: "HebrewSyntax_BIOT711" },
-  { code: "BINT712", name: "Greek Exegesis of Romans", credits: 3, field: "GreekExegesisofRomans_BINTT712" },
-  { code: "THES714", name: "Asian Christian Theology", credits: 2, field: "AsianChristianTheology_THESS714" },
-  { code: "THES625", name: "Systematic Theology 3", credits: 3, field: "SystematicTheology_III_THESS625" },
-  { code: "BINT624", name: "New Testament Biblical Theology", credits: 3, field: "NewTestamentBiblicalTheology_BINTT624" },
-  { code: "CHMC725", name: "Pastoral Theology", credits: 2, field: "PastoralTheology_CHMCC725" },
-  { code: "CHMC613", name: "Premarital Counseling", credits: 2, field: "PremaritalCounseling_CHMC613" },
-  { code: "CHMC724", name: "Church Ministries", credits: 2, field: "ChurchMinistries_CHMC724" },
-  { code: "CHMC612", name: "Counseling Theory", credits: 2, field: "CounselingTheory_CHMCC612" },
-  { code:"CHMI517", name:"Cultural Anthropology", credits:2, field:"CulturalAnthropology_CHMI517"},
-],
+  "MDIV-2": [
+    { code: "BIOT621", name: "Biblical Hebrew 2", credits: 3, field: "BiblicalHebrew_II_BIOT621" },
+    { code: "BINT622", name: "Principles of Greek Exegesis", credits: 3, field: "PrinciplesOfGreekExegesis_BINT622" },
+    { code: "GEST521", name: "Personality Theories", credits: 2, field: "PersonalityTheories_GEST521" },
+    { code: "THES625", name: "Systematic Theology 2", credits: 3, field: "SystematicTheology_II_THES625" },
+    { code: "BIOT614", name: "Old Testament Biblical Theology", credits: 3, field: "OldTestamentBiblicalTheology_BIOT614" },
+    { code: "CHMI615", name: "Introduction to Missiology", credits: 2, field: "IntroductionToMissiology_CHMI615" },
+    { code: "CHMC623", name: "Marriage and Family Counselling", credits: 3, field: "MarriageAndFamilyCounselling_CHMC623" },
+    { code: "CHMM626", name: "Christian Management", credits: 2, field: "ChristianManagement_CHMM626" },
+    { code: "CHMC523", name: "Communication Theory & Practice", credits: 2, field: "CommunicationTheory&Practice_CHMC523" },
+    { code: "BINT524", name: "N.T. Biblical Theology", credits: 3, field: "NTBiblicalTheology_BINT524" },
+    { code: "GEST525", name: "Abnormal Human Behavior", credits: 2, field: "AbnormalHumanBehavior_GEST525" },
+    { code: "CHMC526", name: "Health Counseling", credits: 2, field: "HealthCounseling_CHMC526" }
+  ],
 
-"MTH-1": [
-  { code: "GEST811"	,name:"Research Methods & Thesis Writing" , credits: 2, field: "ResearchMethods&ThesisWriting_GEST811"},
-  { code: "THES824"	,name:"Christology and Atonement" , credits: 3, field: "ChristologyandAtonement_THES824"},
-  { code: "THESS828"	,name:"Theology Proper & Providence" , credits: 3, field: "TheologyProper&Providence_THES828"},
-  { code: "CHMCC913"	,name:"Issues and Concerns in Ecclesiology Today" , credits: 3, field: "IssuesandConcernsinEcclesiologyToday_CHMC913"},
-  { code: "HICH912"	,name:"Christian Thought and Philosophy" , credits: 3, field: "ChristianThoughtandPhilosophy_HICH912"},
-  { code: "RLPH922"	,name:"Philosophy of Religion" , credits: 3, field: "PhilosophyofReligion_RLPH922"},
-],
+  "MDIV-3": [
+    { code: "BIOT721", name: "Hebrew Exegesis of Jonah & Ruth", credits: 3, field: "HebrewExegesisOfJonah&Ruth_BIOT721" },
+    { code: "RLPH722", name: "Introduction to Philosophy", credits: 3, field: "IntroductionToPhilosophy_RLPH722" },
+    { code: "CHMC721", name: "Counseling Practicum", credits: 2, field: "CounselingPracticum_CHMC721" },
+    { code: "THES723", name: "Systematic Theology 4", credits: 3, field: "SystematicTheology_IV_THES723" },
+    { code: "THES725", name: "Modern Theological Trends", credits: 2, field: "ModernTheologicalTrends_THES725" },
+    { code: "BINT726", name: "The Dispensational Interpretation of Revelation", credits: 2, field: "TheDispensationalInterpretationOfRevelation_BINT726" },
+    { code: "CHMC727", name: "Expository Preaching & Worship", credits: 2, field: "ExpositoryPreaching&Worship_CHMC727" },
+    { code: "CHMI724", name: "Modern Missions Trends", credits: 2, field: "ModernMissionsTrends_CHMI724" },
+    { code: "CHMC624", name: "Church and Ministry", credits: 2, field: "ChurchAndMinistry_CHMC624" },
+    { code: "CHMC623", name: "Marriage & Family Counseling", credits: 2, field: "MarriageFamilyCounseling_CHMC623" },
+    { code: "CHMC625", name: "Counseling Skills and Techniques", credits: 2, field: "CounselingSkillsAndTechniques_CHMC625" }
 
-"MTH-2": [
-  { code: "THESS915"	,name:"Theological Methods" , credits: 3, field: "TheologicalMethods_THES915"},
-  { code: "THESS821"	,name:"Contemporary Theology" , credits: 2, field: "ContemporaryTheology_THES821"},
-  { code: "THESS816"	,name:"Apologetics" , credits: 3, field: "Apologetics_THES816"},
-  { code: "Elective"	,name:"Eschatology" , credits: 3, field: "Eschatology_Elective"},
-  { code: "CHMCC923"	,name:"Teaching Practicum" , credits: 2, field: "TeachingPracticum_CHMC923"},
-]
+
+  ],
+
+  "MTH-1": [
+    { code: "GEST811"	,name:"Research Methods & Thesis Writing" , credits: 2, field: "ResearchMethods&ThesisWriting_GEST811"},
+    { code: "THES824"	,name:"Christology and Atonement" , credits: 3, field: "ChristologyandAtonement_THES824"},
+    { code: "THESS828"	,name:"Theology Proper & Providence" , credits: 3, field: "TheologyProper&Providence_THES828"},
+    { code: "CHMCC913"	,name:"Issues and Concerns in Ecclesiology Today" , credits: 3, field: "IssuesandConcernsinEcclesiologyToday_CHMC913"},
+    { code: "HICH912"	,name:"Christian Thought and Philosophy" , credits: 3, field: "ChristianThoughtandPhilosophy_HICH912"},
+    { code: "RLPH922"	,name:"Philosophy of Religion" , credits: 3, field: "PhilosophyofReligion_RLPH922"},
+  ],
+
+  "MTH-2": [
+    { code: "THESS915"	,name:"Theological Methods" , credits: 3, field: "TheologicalMethods_THES915"},
+    { code: "THESS821"	,name:"Contemporary Theology" , credits: 2, field: "ContemporaryTheology_THES821"},
+    { code: "THESS816"	,name:"Apologetics" , credits: 3, field: "Apologetics_THES816"},
+    { code: "Elective"	,name:"Eschatology" , credits: 3, field: "Eschatology_Elective"},
+    { code: "CHMCC923"	,name:"Teaching Practicum" , credits: 2, field: "TeachingPracticum_CHMC923"},
+  ]
 }
 
 

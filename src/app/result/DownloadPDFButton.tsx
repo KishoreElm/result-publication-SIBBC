@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { courseLabels } from "@/lib/airtableTables";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
@@ -23,6 +24,7 @@ interface DownloadPDFButtonProps {
   rollNo: string;
   course: string;
   batch: string;
+  autoDownload?: boolean;
 }
 
 export default function DownloadPDFButton({
@@ -32,6 +34,7 @@ export default function DownloadPDFButton({
   rollNo,
   course,
   batch,
+  autoDownload = false,
 }: DownloadPDFButtonProps) {
   const handleDownload = () => {
     const doc = new jsPDF();
@@ -87,6 +90,15 @@ export default function DownloadPDFButton({
     //  Save File
     doc.save(`${student?.OriginalName ?? "student "}_${rollNo}_Semester_Result.pdf`);
   };
+
+  // Auto-download on component mount if enabled
+  useEffect(() => {
+    if (autoDownload) {
+      setTimeout(() => {
+        handleDownload();
+      }, 500);
+    }
+  }, [autoDownload]);
 
   return (
     <div className="flex justify-center">
