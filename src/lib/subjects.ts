@@ -60,11 +60,9 @@ export const courseSubjects: Record<string, Subject[]> = {
   "MDIV-1": [
     { code: "BINT521", name: "Intermediate Greek – 2", credits: 3, field: "IntermediateGreek_II_BINT521" },
     { code: "BINT522", name: "Chronological Survey of the NT", credits: 3, field: "ChronologicalSurveyOfTheNT_BINT522" },
-    { code: "HICH526", name: "History of South Asian Christianity-1", credits: 2, field: "HistoryOfSouthAsianChristianityI_HICH526" },
     { code: "BINT527", name: "Introduction to Gospels", credits: 3, field: "IntroductionToGospels_BINT527" },
     { code: "THES516", name: "Introduction to Theology", credits: 2, field: "IntroductionToTheology_THES516" },
     { code: "CHMC525", name: "Communication Theory & Practice", credits: 2, field: "CommunicationTheory&Practice_CHMC525" }
-
   ],
 
   "MDIV-2": [
@@ -74,12 +72,10 @@ export const courseSubjects: Record<string, Subject[]> = {
     { code: "THES625", name: "Systematic Theology 2", credits: 3, field: "SystematicTheology_II_THES625" },
     { code: "BIOT614", name: "Old Testament Biblical Theology", credits: 3, field: "OldTestamentBiblicalTheology_BIOT614" },
     { code: "CHMI615", name: "Introduction to Missiology", credits: 2, field: "IntroductionToMissiology_CHMI615" },
-    { code: "CHMC623", name: "Marriage and Family Counselling", credits: 3, field: "MarriageAndFamilyCounselling_CHMC623" },
     { code: "CHMM626", name: "Christian Management", credits: 2, field: "ChristianManagement_CHMM626" },
-    { code: "CHMC523", name: "Communication Theory & Practice", credits: 2, field: "CommunicationTheory&Practice_CHMC523" },
-    { code: "BINT524", name: "N.T. Biblical Theology", credits: 3, field: "NTBiblicalTheology_BINT524" },
     { code: "GEST525", name: "Abnormal Human Behavior", credits: 2, field: "AbnormalHumanBehavior_GEST525" },
-    { code: "CHMC526", name: "Health Counseling", credits: 2, field: "HealthCounseling_CHMC526" }
+    { code: "CHMC526", name: "Health Counseling", credits: 2, field: "HealthCounseling_CHMC526" },
+    { code: "CHMC726", name: "Expository Preaching & Worship", credits: 2, field: "ExpositoryPreachingWorship_CHMC726" }
   ],
 
   "MDIV-3": [
@@ -89,12 +85,13 @@ export const courseSubjects: Record<string, Subject[]> = {
     { code: "THES723", name: "Systematic Theology 4", credits: 3, field: "SystematicTheology_IV_THES723" },
     { code: "THES725", name: "Modern Theological Trends", credits: 2, field: "ModernTheologicalTrends_THES725" },
     { code: "BINT726", name: "The Dispensational Interpretation of Revelation", credits: 2, field: "TheDispensationalInterpretationOfRevelation_BINT726" },
-    { code: "CHMC727", name: "Expository Preaching & Worship", credits: 2, field: "ExpositoryPreaching&Worship_CHMC727" },
     { code: "CHMI724", name: "Modern Missions Trends", credits: 2, field: "ModernMissionsTrends_CHMI724" },
-    { code: "CHMC624", name: "Church and Ministry", credits: 2, field: "ChurchAndMinistry_CHMC624" },
     { code: "CHMC623", name: "Marriage & Family Counseling", credits: 2, field: "MarriageFamilyCounseling_CHMC623" },
-    { code: "CHMC625", name: "Counseling Skills and Techniques", credits: 2, field: "CounselingSkillsAndTechniques_CHMC625" }
-
+    { code: "CHMC625", name: "Counseling Skills and Techniques", credits: 2, field: "CounselingSkillsAndTechniques_CHMC625" },
+    { code: "GEST721", name: "Personality Theories" , credits: 2, field:"PersonalityTheories_GEST721" },
+    { code: "GEST621", name: "Health Counselling" , credits: 2, field:"HealthCounselling_GEST621" },
+    { code: "GEST723", name: "Addiction Counselling" , credits: 2, field:"AddictionCounselling_GEST723" },
+    { code: "CHIM172", name: "Modern Mission Trends" , credits: 2, field:"ModernMissionTrends_CHIM172" },
 
   ],
 
