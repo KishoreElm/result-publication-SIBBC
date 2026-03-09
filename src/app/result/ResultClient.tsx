@@ -52,15 +52,15 @@ export default function ResultClient({
   const batch = student?.Batch ? String(student.Batch) : "-";
 
   return (
-    <div className="w-[1400px]  mx-auto bg-white shadow-lg rounded-3xl">
+    <div className="w-[1000px]  mx-auto bg-white shadow-lg rounded-3xl">
       {/* Buttons - Visible on screen, hidden on print */}
       <div className="flex justify-end gap-4 p-4 print:hidden">
-        {/* <button
+        <button
           onClick={handlePrint}
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-medium transition-colors"
         >
           Print
-        </button> */}
+        </button>
         <DownloadPDFButton
           student={student}
           subjects={subjects}
@@ -73,7 +73,7 @@ export default function ResultClient({
       </div>
 
       {/* Screen View: Detailed Result Sheet (Visible on Web) */}
-      <div className="p-6 flex flex-col print:hidden">
+      <div className="p-6 flex flex-col print:hidden ">
         {" "}
         {/* Hide on print to avoid duplication */}
         {/* Logo */}

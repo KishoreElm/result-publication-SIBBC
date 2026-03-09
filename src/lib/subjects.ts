@@ -96,20 +96,20 @@ export const courseSubjects: Record<string, Subject[]> = {
   ],
 
   "MTH-1": [
-    { code: "GEST811"	,name:"Research Methods & Thesis Writing" , credits: 2, field: "ResearchMethods&ThesisWriting_GEST811"},
+    { code: "GEST811"	,name:"Research Methods & Thesis Writing" , credits: 2, field: "ResearchMethodsThesisWriting_GEST811"},
     { code: "THES824"	,name:"Christology and Atonement" , credits: 3, field: "ChristologyandAtonement_THES824"},
-    { code: "THESS828"	,name:"Theology Proper & Providence" , credits: 3, field: "TheologyProper&Providence_THES828"},
-    { code: "CHMCC913"	,name:"Issues and Concerns in Ecclesiology Today" , credits: 3, field: "IssuesandConcernsinEcclesiologyToday_CHMC913"},
-    { code: "HICH912"	,name:"Christian Thought and Philosophy" , credits: 3, field: "ChristianThoughtandPhilosophy_HICH912"},
-    { code: "RLPH922"	,name:"Philosophy of Religion" , credits: 3, field: "PhilosophyofReligion_RLPH922"},
+    { code: "THES828" ,name:"Theology Proper & Providence" , credits: 3, field: "TheologyProperProvidence_THES828"},
+    { code: "CHMC913" ,name:"Issues and Concerns in Ecclesiology Today" , credits: 3, field: "IssuesandConcernsinEcclesiologyToday_CHMC913"},
+  //   { code: "HICH912"	,name:"Christian Thought and Philosophy" , credits: 3, field: "ChristianThoughtandPhilosophy_HICH912"},
+  //   { code: "RLPH922"	,name:"Philosophy of Religion" , credits: 3, field: "PhilosophyofReligion_RLPH922"},
   ],
 
   "MTH-2": [
-    { code: "THESS915"	,name:"Theological Methods" , credits: 3, field: "TheologicalMethods_THES915"},
-    { code: "THESS821"	,name:"Contemporary Theology" , credits: 2, field: "ContemporaryTheology_THES821"},
-    { code: "THESS816"	,name:"Apologetics" , credits: 3, field: "Apologetics_THES816"},
-    { code: "Elective"	,name:"Eschatology" , credits: 3, field: "Eschatology_Elective"},
-    { code: "CHMCC923"	,name:"Teaching Practicum" , credits: 2, field: "TeachingPracticum_CHMC923"},
+    { code: "THES915"	,name:"Theological Methods" , credits: 3, field: "TheologicalMethods_THES915"},
+    { code: "THES821"	,name:"Contemporary Theology" , credits: 2, field: "ContemporaryTheology_THES821"},
+    { code: "THES816"	,name:"Apologetics" , credits: 3, field: "Apologetics_THES816"},
+    { code: "Elective" ,name:"Eschatology" , credits: 3, field: "Eschatology_Elective"},
+    { code: "CHMC923"	,name:"Teaching Practicum" , credits: 2, field: "TeachingPracticum_CHMC923"},
   ]
 }
 
